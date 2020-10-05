@@ -5,6 +5,8 @@ const cors = require("cors");
 const Post = require("./api/models/Post");
 const morgan = require("morgan");
 const userRoutes = require("./api/routes/User");
+const postRoutes = require("./api/routes/Posts");
+
 const bodyParser = require("body-parser");
 
 const mongoose = require("mongoose");
@@ -23,6 +25,7 @@ app.use(bodyParser.json());
 app.use(cors());
 app.use(morgan("dev"));
 app.use("/user", userRoutes);
+app.use("/posts", postRoutes);
 
 app.get("/", (req, res) => {
   res.send("Welcome to a basic express App");
