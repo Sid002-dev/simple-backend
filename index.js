@@ -31,6 +31,7 @@ app.get("/all", (req, res, next) => {
       const response = {
         ...result,
       };
+      console.log("Erro");
       res.status(200).json(response);
     })
     .catch((err) => console.log(err));
