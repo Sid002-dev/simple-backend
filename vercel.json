@@ -1,21 +1,46 @@
 {
   "version": 2,
-  "builds": [{ "src": "index.js", "use": "@vercel/node" }],
+  "builds": [
+    {
+      "src": "index.js",
+      "use": "@vercel/node"
+    }
+  ],
   "routes": [
     {
-      "src": "/users",
+      "src": "/",
       "dest": "/index.js",
-      "methods": ["GET"]
+      "methods": [
+        "GET"
+      ]
     },
     {
-      "src": "/user",
+      "src": "/user/test",
       "dest": "/index.js",
-      "methods": ["POST"]
+      "methods": [
+        "GET"
+      ]
     },
     {
-      "src": "/all",
+      "src": "/user/login",
       "dest": "/index.js",
-      "methods": ["GET"]
+      "methods": [
+        "POST"
+      ]
+    },
+    {
+      "src": "/user/signup",
+      "dest": "/index.js",
+      "methods": [
+        "POST"
+      ]
+    },
+    {
+      "src": "/user/secure",
+      "dest": "/index.js",
+      "methods": [
+        "GET"
+      ]
     }
   ]
 }

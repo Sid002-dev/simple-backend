@@ -2,9 +2,12 @@ require("dotenv").config(); // Configure dotenv to load in the .env file
 const express = require("express");
 const app = express();
 const cors = require("cors");
-const Post = require("./models/Post");
-const mongoose = require("mongoose");
+const Post = require("./api/models/Post");
+const morgan = require("morgan");
+const userRoutes = require("./api/routes/User");
+const bodyParser = require("body-parser");
 
+const mongoose = require("mongoose");
 const port = 5000;
 mongoose
   .connect(process.env.MONGO_URL, {
@@ -15,28 +18,15 @@ mongoose
     console.log("Database Connected");
   });
 // Body parser
-app.use(express.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 app.use(cors());
+app.use(morgan("dev"));
+app.use("/user", userRoutes);
 
-// Home route
 app.get("/", (req, res) => {
   res.send("Welcome to a basic express App");
 });
-
-app.get("/all", (req, res, next) => {
-  Post.find()
-    .select()
-    .exec()
-    .then((result) => {
-      const response = {
-        ...result,
-      };
-      console.log("Erro");
-      res.status(200).json(response);
-    })
-    .catch((err) => console.log(err));
-});
-
 
 // Listen on port 5000
 app.listen(port, () => {

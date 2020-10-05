@@ -4,7 +4,8 @@
   "description": "Express Backend",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "localDev": "nodemon index.js"
   },
   "keywords": [
     "express"
@@ -19,5 +20,8 @@
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.10.7"
+  },
+  "devDependencies": {
+    "morgan": "^1.10.0"
   }
 }
