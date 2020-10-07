@@ -10,9 +10,7 @@ router.get("/all", (req, res, next) => {
     .select()
     .exec()
     .then((result) => {
-      const response = {
-        ...result,
-      };
+      const response = [...result];
       res.status(200).json(response);
     })
     .catch((err) => console.log(err));
