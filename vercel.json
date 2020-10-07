@@ -10,37 +10,32 @@
     {
       "src": "/",
       "dest": "/index.js",
-      "methods": [
-        "GET"
-      ]
+      "methods": ["GET"]
     },
     {
       "src": "/user/test",
       "dest": "/index.js",
-      "methods": [
-        "GET"
-      ]
+      "methods": ["GET"]
     },
     {
       "src": "/user/login",
       "dest": "/index.js",
-      "methods": [
-        "POST"
-      ]
+      "methods": ["POST"]
     },
     {
       "src": "/user/signup",
       "dest": "/index.js",
-      "methods": [
-        "POST"
-      ]
+      "methods": ["POST"]
     },
     {
       "src": "/user/secure",
       "dest": "/index.js",
-      "methods": [
-        "GET"
-      ]
+      "methods": ["GET"]
+    },
+    {
+      "src": "/posts/all",
+      "dest": "/index.js",
+      "methods": ["GET"]
     }
   ]
 }
