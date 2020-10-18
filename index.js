@@ -21,7 +21,7 @@ mongoose
     console.log("Database Connected");
   });
 // Body parser
-app.use("/uploads", express.static("uploads"));
+app.use("/upload", express.static("upload"));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(cors());
