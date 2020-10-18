@@ -36,6 +36,11 @@
       "src": "/posts/all",
       "dest": "/index.js",
       "methods": ["GET"]
+    },
+    {
+      "src": "/products",
+      "dest": "/index.js",
+      "methods": ["GET", "POST"]
     }
   ]
 }
