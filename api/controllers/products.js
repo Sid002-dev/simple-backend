@@ -1,7 +1,7 @@
 require("dotenv").config(); // Configure dotenv to load in the .env file
 
 const mongoose = require("mongoose");
-const Product = require("../models/product");
+const Product = require("../models/Product");
 var cloudinary = require("cloudinary").v2;
 cloudinary.config({
   cloud_name: process.env.CLOUD_NAME,
